@@ -74,8 +74,7 @@
       position: relative;
       overflow: hidden;
       border-radius: 50%;
-      background: linear-gradient(45deg, #f3ec78, #af4261);
-      animation: gradientBG 15s ease infinite;
+      background: linear-gradient(45deg, #c2bd62, #af4261);
     }
 
     #logo {
@@ -95,7 +94,7 @@
       width: 100%;
       height: 100%;
       z-index: 0;
-      background: linear-gradient(45deg, #f3ec78, #af4261);
+      background: linear-gradient(45deg, #24231d, #1e1c1d);
       background-size: 400% 400%;
       animation: gradientBG 15s ease infinite;
     }
@@ -109,6 +108,11 @@
 
     .title {
       margin: 0;
+    }
+    .link{
+      color: gold;
+      background-color: rgb(39, 33, 33);
+      margin-top: 10px;
     }
 
     @keyframes gradientBG {
@@ -164,17 +168,17 @@
     <div class="wave"></div>
   </div>
   <div class="container">
-    <div class="language-selector">
-      <a href="#" onclick="changeLanguage('uz')">🇺🇿 O'zbek</a>
-      <a href="#" onclick="changeLanguage('ru')">🇷🇺 Русский</a>
+    <div class="language-selector" style="color: #fff;">
+      <a style="color: gold" href="#" onclick="changeLanguage('uz')">🇺🇿 O'zbek</a>
+      <a style="color: gold" href="#" onclick="changeLanguage('ru')">🇷🇺 Русский</a>
     </div>
     <div id="logo-container">
       <img id="logo"
         src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/fayz.jpg-WVhqKiFP0xKc9m6QSiPLIGifJzAVHw.jpeg"
         alt="G'ijduvon Fayz Logo">
     </div>
-    <h1 style="margin: 0;" class="title" id="title">G'ijduvon Fayz</h1>
-    <h2 id="menu-title" style="margin: 0;">Menu</h2>
+    <h1 style="margin: 0; color: gold" class="title" id="title">G'ijduvon Fayz</h1>
+    <h2 id="menu-title" style="margin: 0; color: gold">Menu</h2>
     <div class="links" id="links">
       <a href="./birinchi.html" class="link">1-Ovqatlar</a>
       <a href="./ikkinchi.html" class="link">2-Ovqatlar</a>
