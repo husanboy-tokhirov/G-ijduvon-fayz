@@ -233,8 +233,8 @@
                 </div>
             </div>
             <div class="menu">
-                <div style="width: 280px; overflow: hidden; border-radius: 20px; height: 300px;" class="food-item">
-                    <img width="280px" height="220px" src="./images/ovqat2.14.jpg" alt="Vaguri" class="food-image">
+                <div style="width: 280px; overflow: hidden; border-radius: 20px; height: 350px;" class="food-item">
+                    <img width="280px" height="200px" src="./images/ovqat2.14.jpg" alt="Vaguri" class="food-image">
                     <div style="display: flex; align-items: center; justify-content: center; gap: 10px; margin-top: 10px;">
                         <h3 style="text-align: center; font-size: 22px; font-weight: 900; margin: 0;"
                             id="food-name16">Vaguri</h3>
@@ -243,12 +243,16 @@
                             src="./image/star.svg"
                             alt="G'ijduvon Fayz Logo">
                     </div>
-                    <strong
-                        style="margin: 0; display: flex; align-items: center; justify-content: center; margin-top: 5px;"
-                        id="price16">Narxi: 230.000</strong>
+                    <div style="display: flex; flex-direction: column; align-items: center; justify-content: center; font-size: 15px; margin: 0;">
+                        <h4 id="fri-haqida">Fri (portsiya) 15.000</h4>
+                        <strong
+                            style="display: flex; align-items: center; justify-content: center; "
+                            id="price16">Narxi: 230.000
+                        </strong>
+                    </div>
                 </div>
             </div>
-            <a style="text-decoration: none; font-size: 20px; color: #fff; margin-bottom: 30px; margin-top: 30px;"
+            <a style="text-decoration: none; font-size: 20px; color: #fff; margin-bottom: 30px; "
                 href="contact.html" class="link" id="contact-link">Murojaat uchun</a>
         </div>
     </div>
@@ -261,6 +265,7 @@
 
         function updateContent(lang) {
             const title = document.getElementById('title');
+            const frihaqida = document.getElementById('fri-haqida')
             const foodName = document.getElementById('food-name');
             const foodName1 = document.getElementById('food-name1');
             const foodName2 = document.getElementById('food-name2');
@@ -299,6 +304,7 @@
 
             if (lang === 'uz') {
                 title.textContent = "2-Ovqatlar";
+                frihaqida.textContent = "Fri (portsiya) 15.000"
                 foodName.textContent = "Bifshteks";
                 foodName1.textContent = "Bistrogin";
                 foodName2.textContent = "Norin";
@@ -336,6 +342,7 @@
                 contactLink.textContent = "Murojaat uchun";
             } else if (lang === 'ru') {
                 title.textContent = "2-Блюда";
+                frihaqida.textContent = "Фри (порсия) 15.000"
                 foodName.textContent = "Бифштекс";
                 foodName1.textContent = "Бистроги";
                 foodName2.textContent = "Норин";
