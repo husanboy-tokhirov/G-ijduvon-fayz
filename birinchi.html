@@ -8,12 +8,75 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <style>
-    .tushonka{
-        margin-left: 40px;
-    }
-    body{
-        background: linear-gradient(45deg, #24231d, #1e1c1d);
-    }
+    body {
+    background: linear-gradient(45deg, #24231d, #1e1c1d);
+    font-family: Arial, sans-serif;
+    text-align: center;
+    color: #fff;
+}
+
+.container {
+    max-width: 900px;
+    margin: auto;
+    padding: 20px;
+}
+
+h1 {
+    font-size: 28px;
+    margin-bottom: 20px;
+}
+
+.menu {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
+    justify-items: center;
+}
+
+.food-item {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    padding: 15px;
+    width: 300px;
+    text-align: center;
+    transition: transform 0.3s;
+}
+
+.food-item:hover {
+    transform: scale(1.05);
+}
+
+.food-image {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+h3 {
+    font-size: 22px;
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+strong {
+    display: block;
+    margin-top: 5px;
+}
+
+.contact-link {
+    display: block;
+    margin-top: 20px;
+    font-size: 22px;
+    color: rgb(252, 252, 252);
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.contact-link:hover {
+    color: #ffa500;
+}
+
 </style>
 
 <body>
@@ -152,6 +215,7 @@
                 foodName7.textContent = "Пельмени";
                 foodName8.textContent = "Тушенка шурпа";
                 contactLink.textContent = "Для связи";
+                narxi.textContent = "Цена: 30.000";
                 narxi2.textContent = "Цена: 30.000";
                 narxi3.textContent = "Цена: 30.000";
                 narxi4.textContent = "Цена: 30.000";
