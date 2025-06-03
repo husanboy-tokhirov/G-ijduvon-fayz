@@ -110,7 +110,7 @@ strong {
                         id="food-name2">Norin</h3>
                     <strong
                         style="margin: 0; display: flex; align-items: center; justify-content: center; margin-top: 5px;"
-                        id="price2">Narxi: 35.000</strong>
+                        id="price2">Narxi: 30.000</strong>
                 </div>
             </div>
             <div class="menu">
@@ -154,17 +154,7 @@ strong {
                 </div>
             </div>
             <div class="menu">
-                <div style="width: 280px; overflow: hidden; border-radius: 20px; height: 300px;" class="food-item">
-                    <img width="280px" height="220px" src="./image/qovurmalag'mon.jpg" alt="Vaguri" class="food-image">
-                    <h3 style="text-align: center; font-size: 22px; font-weight: 900; margin: 0; margin-top: 10px;"
-                        id="food-name7">Qovurilgan tovuq</h3>
-                    <strong
-                        style="margin: 0; display: flex; align-items: center; justify-content: center; margin-top: 5px;"
-                        id="price7">Narxi: 90.000</strong>
-                </div>
-            </div>
-            <div class="menu">
-                <div style="width: 280px; overflow: hidden; border-radius: 20px; height: 300px;" class="food-item">
+                <div style="width: 280px; overflow: hidden; border-radius: 20px; height: 340px;" class="food-item">
                     <img width="280px" height="220px" src="./image/jizbiz.jpg" alt="Vaguri" class="food-image">
                     <div style="display: flex; align-items: center; justify-content: center; gap: 10px; margin-top: 10px;">
                         <h3 style="text-align: center; font-size: 22px; font-weight: 900; margin: 0;"
@@ -176,7 +166,9 @@ strong {
                     </div>
                     <strong
                         style="margin: 0; display: flex; align-items: center; justify-content: center; margin-top: 5px;"
-                        id="price8">Narxi: 210.000</strong>
+                        id="price8">Narxi: 220.000
+                    </strong>
+                    <h4 style="margin: 0; display: flex; align-items: center; justify-content: center; margin-top: 11px;" id="porsiya">Portsiya 66.000</h4>
                 </div>
             </div>
             <div class="menu">
@@ -186,11 +178,11 @@ strong {
                         id="food-name9">Mangal</h3>
                     <strong
                         style="margin: 0; display: flex; align-items: center; justify-content: center; margin-top: 5px;"
-                        id="price9">Narxi: 130.000</strong>
+                        id="price9">Narxi: 140.000</strong>
                 </div>
             </div>
             <div class="menu">
-                <div style="width: 280px; overflow: hidden; border-radius: 20px; height: 300px;" class="food-item">
+                <div style="width: 280px; overflow: hidden; border-radius: 20px; height: 340px;" class="food-item">
                     <img width="280px" height="220px" src="./image/qozonkabob.jpg" alt="Vaguri" class="food-image">
                     <div style="display: flex; align-items: center; justify-content: center; gap: 10px; margin-top: 10px;">
                         <h3 style="text-align: center; font-size: 22px; font-weight: 900; margin: 0;"
@@ -202,7 +194,9 @@ strong {
                     </div>
                     <strong
                         style="margin: 0; display: flex; align-items: center; justify-content: center; margin-top: 5px;"
-                        id="price10">Narxi: 210.000</strong>
+                        id="price10">Narxi: 220.000
+                    </strong>
+                    <h4 style="margin: 0; display: flex; align-items: center; justify-content: center; margin-top: 11px;" id="porsiya">Portsiya 66.000</h4>
                 </div>
             </div>
             <div class="menu">
@@ -260,7 +254,7 @@ strong {
                     </div>
                     <strong
                         style="margin: 0; display: flex; align-items: center; justify-content: center; margin-top: 5px;"
-                        id="price14">Narxi: 210.000</strong>
+                        id="price14">Narxi: 240.000</strong>
                 </div>
             </div>
             <div class="menu">
@@ -270,7 +264,7 @@ strong {
                         id="food-name15"> Sazan Baliq</h3>
                     <strong
                         style="margin: 0; display: flex; align-items: center; justify-content: center; margin-top: 5px;"
-                        id="price15">Narxi: 160.000</strong>
+                        id="price15">Narxi: 170.000</strong>
                 </div>
             </div>
             <div class="menu">
@@ -324,6 +318,7 @@ strong {
             const foodName14 = document.getElementById('food-name14');
             const foodName15 = document.getElementById('food-name15');
             const foodName16 = document.getElementById('food-name16');
+            const porsiya = document.getElementById('porsiya');
             const price = document.getElementById('price');
             const price1 = document.getElementById('price1');
             const price2 = document.getElementById('price2');
@@ -363,22 +358,23 @@ strong {
                 foodName14.textContent = "Tandir";
                 foodName15.textContent = "Sazan baliq";
                 foodName16.textContent = "Vaguri";
+                porsiya.textContent = "Portsiya";
                 price.textContent = "Narxi: 35.000";
                 price1.textContent = "Narxi: 35.000";
-                price2.textContent = "Narxi: 35.000";
+                price2.textContent = "Narxi: 30.000";
                 price3.textContent = "Narxi: 8.000";
                 price4.textContent = "Narxi: 35.000";
                 price5.textContent = "Narxi: 55.000";
                 price6.textContent = "Narxi: 30.000";
                 price7.textContent = "Narxi: 90.000";
-                price8.textContent = "Narxi: 210.000 kg";
-                price9.textContent = "Narxi: 130.000";
-                price10.textContent = "Narxi: 210.000 kg";
+                price8.textContent = "Narxi: 220.000 kg";
+                price9.textContent = "Narxi: 140.000";
+                price10.textContent = "Narxi: 220.000 kg";
                 price11.textContent = "Narxi: 28.000";
                 price12.textContent = "Narxi: 250.000 kg";
                 price13.textContent = "Narxi: 11.000";
-                price14.textContent = "Narxi: 210.000 kg";
-                price15.textContent = "Narxi: 160.000";
+                price14.textContent = "Narxi: 240.000 kg";
+                price15.textContent = "Narxi: 170.000";
                 price16.textContent = "Narxi: 245.000 kg";
                 contactLink.textContent = "Murojaat uchun";
             } else if (lang === 'ru') {
@@ -401,22 +397,23 @@ strong {
                 foodName14.textContent = "Тандир";
                 foodName15.textContent = "Жаренные pыба";
                 foodName16.textContent = "Вагури";
+                porsiya.textContent = "Портсия";
                 price.textContent = "Цена: 35.000";
                 price1.textContent = "Цена: 35.000";
-                price2.textContent = "Цена: 35.000";
+                price2.textContent = "Цена: 30.000";
                 price3.textContent = "Цена: 8.000";
                 price4.textContent = "Цена: 35.000";
                 price5.textContent = "Цена: 55.000";
                 price6.textContent = "Цена: 30.000";
                 price7.textContent = "Цена: 90.000";
                 price8.textContent = "Цена: 210.000 кг";
-                price9.textContent = "Цена: 130.000";
-                price10.textContent = "Цена: 210.000 кг";
+                price9.textContent = "Цена: 140.000";
+                price10.textContent = "Цена: 220.000 кг";
                 price11.textContent = "Цена: 28.000";
                 price12.textContent = "Цена: 250.000 кг";
                 price13.textContent = "Цена: 11.000";
-                price14.textContent = "Цена: 210.000 кг";
-                price15.textContent = "Цена: 160.000";
+                price14.textContent = "Цена: 240.000 кг";
+                price15.textContent = "Цена: 170.000";
                 price16.textContent = "Цена: 245.000 кг";
                 contactLink.textContent = "Для связи";
             }
