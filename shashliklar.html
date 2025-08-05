@@ -4,167 +4,328 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ovqatlar</title>
+    <title>Shashliklar</title>
     <style>
+        .food-image {
+        width: 100%;
+        height: 220px;
+        background: #555;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 14px;
+        color: #aaa;
+        overflow: hidden;
+        border-bottom: 2px solid #ff8747;
+    }
+
+    .food-image img {
+        width: 100%;
+        height: 100%;
+        display: block;
+        border-radius: 15px 15px 0 0;
+    }
+
         body {
             font-family: 'Arial', sans-serif;
             margin: 0;
             padding: 0;
             background: linear-gradient(45deg, #24231d, #1e1c1d);
+            color: #fff;
         }
 
-        .product {
-            text-align: center;
+        .container {
+            max-width: 1200px;
+            margin: auto;
             padding: 20px;
-            border: 1px solid #ddd;
-            margin: 20px;
         }
 
-        .product img {
-            width: 200px;
-            height: 200px;
+        h1 {
+            text-align: center;
+            color: #ff8747;
+            font-size: 32px;
+            margin-bottom: 30px;
+        }
+
+        .menu {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+            justify-items: center;
+        }
+
+        /* Desktop: 4 columns */
+        @media (min-width: 1200px) {
+            .menu {
+                grid-template-columns: repeat(4, 1fr);
+            }
+        }
+
+        /* Large tablets and small desktops: 3 columns */
+        @media (min-width: 993px) and (max-width: 1199px) {
+            .menu {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+
+        /* Tablets: 2 columns */
+        @media (min-width: 601px) and (max-width: 992px) {
+            .menu {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 15px;
+            }
+            
+            .food-item {
+                width: 100% !important;
+                max-width: 300px;
+            }
+        }
+
+        /* Mobile phones: 1 column */
+        @media (max-width: 600px) {
+            .menu {
+                grid-template-columns: 1fr;
+                gap: 15px;
+            }
+            
+            .food-item {
+                width: 100% !important;
+                max-width: 350px;
+            }
+            
+            h1 {
+                font-size: 28px;
+            }
+        }
+
+        .food-item {
+            width: 280px;
+            border-radius: 20px;
+            overflow: hidden;
+            height: auto;
+            min-height: 300px;
+            background: #333;
+            box-shadow: 0 4px 8px rgba(255, 255, 255, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .food-item:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 8px 16px rgba(255, 255, 255, 0.2);
+        }
+
+        .food-image {
+            width: 100%;
+            height: 220px;
             object-fit: cover;
+            background: #555;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 14px;
+            color: #aaa;
         }
 
-        .product h3 {
+        .food-content {
+            padding: 15px;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        h3 {
+            text-align: center;
+            font-size: 20px;
+            font-weight: 900;
+            margin: 0;
+            color: #ffcc00;
+        }
+
+        strong {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 16px;
+            color: #fff;
             margin-top: 10px;
-            color: #ff6347;
         }
 
-        .product p {
-            color: #555;
+        .contact-link {
+            display: block;
+            margin-top: 30px;
+            font-size: 20px;
+            color: #fff;
+            text-decoration: none;
+            font-weight: bold;
+            text-align: center;
+        }
+
+        .contact-link:hover {
+            color: #ff8747;
         }
     </style>
 </head>
 
 <body>
-    <div style="display: flex; align-items: center; justify-content: center; height: 100vh;" class="container">
-        <div style="display: flex; align-items: center; color: #fff; justify-content: center; flex-direction: column;"
-            class="container">
-            <h1 id="title">Shashliklar</h1>
-            <div style="display: flex; align-items: center; gap: 120px;" class="menu">
-                <div>
-                    <div style="width: 300px; overflow: hidden; border-radius: 20px; " class="food-item">
-                        <img width="300px" height="450px" src="./images/IMAGES.JPG" alt="Mol jaz" class="food-image">
-                    </div>
-                </div>
-                <div>
-                    <div style="display: flex; align-items: center; gap: 5px; justify-content: space-between;">
-                        <h3 style="text-align: center; font-size: 20px; font-weight: 900; margin: 0; margin-top: 10px;"
-                            id="foods-name">Qiyma</h3>
-                        <strong
-                            style="margin: 0; display: flex; align-items: center; font-size: 12px; justify-content: center; margin-top: 5px;"
-                            id="prices">Narxi: 20.000</strong>
-                    </div>
-                    <div style="display: flex; align-items: center; gap: 5px; justify-content: space-between;">
-                        <h3 style="text-align: center; font-size: 20px; font-weight: 900; margin: 0; margin-top: 10px;"
-                            id="foods-name1">Mol jaz</h3>
-                        <strong
-                            style="margin: 0; display: flex; align-items: center; font-size: 12px; justify-content: center; margin-top: 5px;"
-                            id="price1">Narxi: 23.000</strong>
-                    </div>
-                    <div style="display: flex; align-items: center; gap: 5px; justify-content: space-between;">
-                        <h3 style="text-align: center; font-size: 20px; font-weight: 900; margin: 0; margin-top: 10px;"
-                            id="foods-name2">Qo'y jaz</h3>
-                        <strong
-                            style="margin: 0; display: flex; align-items: center; font-size: 12px; justify-content: center; margin-top: 5px;"
-                            id="price2">Narxi: 23.000</strong>
-                    </div>
-                    <div style="display: flex; align-items: center; gap: 5px; justify-content: space-between;">
-                        <h3 style="text-align: center; font-size: 20px; font-weight: 900; margin: 0; margin-top: 10px;"
-                            id="foods-name3">Jaz fele</h3>
-                        <strong
-                            style="margin: 0; display: flex; align-items: center; font-size: 12px; justify-content: center; margin-top: 5px;"
-                            id="price3">Narxi: 25.000</strong>
-                    </div>
-                    <div style="display: flex; align-items: center; gap: 5px; justify-content: space-between;">
-                        <h3 style="text-align: center; font-size: 20px; font-weight: 900; margin: 0; margin-top: 10px;"
-                            id="foods-name4">Tovuq kavkaz</h3>
-                        <strong
-                            style="margin: 0; display: flex; align-items: center; font-size: 12px; justify-content: center; margin-top: 5px;"
-                            id="price4">Narxi: 23.000</strong>
-                    </div>
-                    <div style="display: flex; align-items: center; gap: 5px; justify-content: space-between;">
-                        <h3 style="text-align: center; font-size: 20px; font-weight: 900; margin: 0; margin-top: 10px;"
-                            id="foods-name5">Tovuq fele</h3>
-                        <strong
-                            style="margin: 0; display: flex; align-items: center; font-size: 12px; justify-content: center; margin-top: 5px;"
-                            id="price5">Narxi: 17.000</strong>
-                    </div>
-                    <div style="display: flex; align-items: center; gap: 5px; justify-content: space-between;">
-                        <h3 style="text-align: center; font-size: 20px; font-weight: 900; margin: 0; margin-top: 10px;"
-                            id="foods-name6">Jigar</h3>
-                        <strong
-                            style="margin: 0; display: flex; align-items: center; font-size: 12px; justify-content: center; margin-top: 5px;"
-                            id="price6">Narxi: 17.000</strong>
-                    </div>
-                    <div style="display: flex; align-items: center; gap: 5px; justify-content: space-between;">
-                        <h3 style="text-align: center; font-size: 20px; font-weight: 900; margin: 0; margin-top: 10px;"
-                            id="foods-name7">Rulet qiyma</h3>
-                        <strong
-                            style="margin: 0; display: flex; align-items: center; font-size: 12px; justify-content: center; margin-top: 5px;"
-                            id="price7">Narxi: 21.000</strong>
-                    </div>
-                    <div style="display: flex; align-items: center; gap: 5px; justify-content: space-between;">
-                        <h3 style="text-align: center; font-size: 20px; font-weight: 900; margin: 0; margin-top: 10px;"
-                            id="foods-name8">Napalion</h3>
-                        <strong
-                            style="margin: 0; display: flex; align-items: center; font-size: 12px; justify-content: center; margin-top: 5px;"
-                            id="price8">Narxi: 25.000</strong>
-                    </div>
-                    <div style="display: flex; align-items: center; gap: 5px; justify-content: space-between;">
-                        <h3 style="text-align: center; font-size: 20px; font-weight: 900; margin: 0; margin-top: 10px;"
-                            id="foods-name9">Qovurg'a</h3>
-                        <strong
-                            style="margin: 0; display: flex; align-items: center; font-size: 12px; justify-content: center; margin-top: 5px;"
-                            id="price9">Narxi: 25.000</strong>
-                    </div>
-                    <div style="display: flex; align-items: center; gap: 5px; justify-content: space-between;">
-                        <h3 style="text-align: center; font-size: 20px; font-weight: 900; margin: 0; margin-top: 10px;"
-                            id="foods-name10">Rulet govyadina</h3>
-                        <strong
-                            style="margin: 0; display: flex; align-items: center; font-size: 12px; justify-content: center; margin-top: 5px;"
-                            id="price10">Narxi: 25.000</strong>
-                    </div>
-                    <div style="display: flex; align-items: center; gap: 5px; justify-content: space-between;">
-                        <h3 style="text-align: center; font-size: 20px; font-weight: 900; margin: 0; margin-top: 10px;"
-                            id="foods-name11">Dumba shashlik</h3>
-                        <strong
-                            style="margin: 0; display: flex; align-items: center; font-size: 12px; justify-content: center; margin-top: 5px;"
-                            id="price11">Narxi: 17.000</strong>
-                    </div>
-                    <div style="display: flex; align-items: center; gap: 5px; justify-content: space-between;">
-                        <h3 style="text-align: center; font-size: 20px; font-weight: 900; margin: 0; margin-top: 10px;"
-                            id="foods-name12">Gribi</h3>
-                        <strong
-                            style="margin: 0; display: flex; align-items: center; font-size: 12px; justify-content: center; margin-top: 5px;"
-                            id="price12">Narxi: 17.000</strong>
-                    </div>
-                    <div style="display: flex; align-items: center; gap: 5px; justify-content: space-between;">
-                        <h3 style="text-align: center; font-size: 20px; font-weight: 900; margin: 0; margin-top: 10px;"
-                            id="foods-name13">Ovoshnoy pomidor</h3>
-                        <strong
-                            style="margin: 0; display: flex; align-items: center; font-size: 12px; justify-content: center; margin-top: 5px;"
-                            id="price13">Narxi: 10.000</strong>
-                    </div>
-                    <div style="display: flex; align-items: center; gap: 5px; justify-content: space-between;">
-                        <h3 style="text-align: center; font-size: 20px; font-weight: 900; margin: 0; margin-top: 10px;"
-                            id="foods-name14">Ovoshnoy assarti</h3>
-                        <strong
-                            style="margin: 0; display: flex; align-items: center; font-size: 12px; justify-content: center; margin-top: 5px;"
-                            id="price14">Narxi: 15.000</strong>
-                    </div>
+    <div class="container">
+        <h1 id="title">Shashliklar</h1>
+        <div class="menu">
+            <!-- Qiyma -->
+            <div class="food-item">
+                <div class="food-image"><img src="./shashliklar_image/Qiyma.jpg" alt=""></div>
+                <div class="food-content">
+                    <h3 id="foods-name">Qiyma</h3>
+                    <strong id="prices">Narxi: 22.000</strong>
                 </div>
             </div>
-            <a style="text-decoration: none; font-size: 20px; color: white; padding-top: 30px; padding-bottom: 30px;"
-                href="contact.html" class="link" id="contact-link">Murojaat uchun</a>
+
+            <!-- Mol jaz -->
+            <div class="food-item">
+                <div class="food-image"><img src="./shashliklar_image/Mol_jaz.jpg" alt=""></div>
+                <div class="food-content">
+                    <h3 id="foods-name1">Mol jaz</h3>
+                    <strong id="price1">Narxi: 25.000</strong>
+                </div>
+            </div>
+
+            <!-- Qo'y jaz -->
+            <div class="food-item">
+                <div class="food-image"><img src="./shashliklar_image/Qo'y_jaz.jpg" alt=""></div>
+                <div class="food-content">
+                    <h3 id="foods-name2">Qo'y jaz</h3>
+                    <strong id="price2">Narxi: 25.000</strong>
+                </div>
+            </div>
+
+            <!-- Jaz fele -->
+            <div class="food-item">
+                <div class="food-image"><img src="./shashliklar_image/Laz_fele.jpg" alt=""></div>
+                <div class="food-content">
+                    <h3 id="foods-name3">Jaz fele</h3>
+                    <strong id="price3">Narxi: 28.000</strong>
+                </div>
+            </div>
+
+            <!-- Tovuq kavkaz -->
+            <div class="food-item">
+                <div class="food-image"><img src="./shashliklar_image/Tovuq_kavkaz.jpg" alt=""></div>
+                <div class="food-content">
+                    <h3 id="foods-name4">Tovuq kavkaz</h3>
+                    <strong id="price4">Narxi: 23.000</strong>
+                </div>
+            </div>
+
+            <!-- Tovuq fele -->
+            <div class="food-item">
+                <div class="food-image"><img src="./shashliklar_image/Kavkaz_qiyma.jpg" alt=""></div>
+                <div class="food-content">
+                    <h3 id="foods-name5">Kavkaz qiyma</h3>
+                    <strong id="price5">Narxi: 45.000</strong>
+                </div>
+            </div>
+            
+            <!-- dolor shashlik -->
+            <div class="food-item">
+                <div class="food-image"><img src="./shashliklar_image/Dollor_shashlik.jpg" alt=""></div>
+                <div class="food-content">
+                    <h3 id="foods-name5">Dollar shashlik</h3>
+                    <strong id="price5">Narxi: 45.000</strong>
+                </div>
+            </div>
+
+            <!-- Jigar -->
+            <div class="food-item">
+                <div class="food-image"><img src="./shashliklar_image/Jigar.jpg" alt=""></div>
+                <div class="food-content">
+                    <h3 id="foods-name6">Jigar</h3>
+                    <strong id="price6">Narxi: 18.000</strong>
+                </div>
+            </div>
+
+            <!-- Rulet qiyma -->
+            <div class="food-item">
+                <div class="food-image"><img src="./shashliklar_image/Rulet_qiyma.jpg" alt=""></div>
+                <div class="food-content">
+                    <h3 id="foods-name7">Rulet qiyma</h3>
+                    <strong id="price7">Narxi: 22.000</strong>
+                </div>
+            </div>
+
+            <!-- Napalion -->
+            <div class="food-item">
+                <div class="food-image"><img src="./shashliklar_image/Napalyon.jpg" alt=""></div>
+                <div class="food-content">
+                    <h3 id="foods-name8">Napalion</h3>
+                    <strong id="price8">Narxi: 28.000</strong>
+                </div>
+            </div>
+
+            <!-- Qovurg'a -->
+            <div class="food-item">
+                <div class="food-image"><img src="./shashliklar_image/Qovurga.jpg" alt=""></div>
+                <div class="food-content">
+                    <h3 id="foods-name9">Qovurg'a</h3>
+                    <strong id="price9">Narxi: 28.000</strong>
+                </div>
+            </div>
+
+            <!-- Rulet govyadina -->
+            <div class="food-item">
+                <div class="food-image"><img src="./shashliklar_image/Rulet_gozyadina.jpg" alt=""></div>
+                <div class="food-content">
+                    <h3 id="foods-name10">Rulet govyadina</h3>
+                    <strong id="price10">Narxi: 28.000</strong>
+                </div>
+            </div>
+
+            <!-- Dumba shashlik -->
+            <div class="food-item">
+                <div class="food-image"><img src="./shashliklar_image/Dumba.jpg" alt=""></div>
+                <div class="food-content">
+                    <h3 id="foods-name11">Dumba shashlik</h3>
+                    <strong id="price11">Narxi: 17.000</strong>
+                </div>
+            </div>
+
+            <!-- Gribi -->
+            <div class="food-item">
+                <div class="food-image"><img src="./shashliklar_image/Gribi.jpg" alt=""></div>
+                <div class="food-content">
+                    <h3 id="foods-name12">Gribi</h3>
+                    <strong id="price12">Narxi: 18.000</strong>
+                </div>
+            </div>
+
+            <!-- Ovoshnoy pomidor -->
+            <div class="food-item">
+                <div class="food-image"><img src="./shashliklar_image/Pomidor.jpg" alt=""></div>
+                <div class="food-content">
+                    <h3 id="foods-name13">Ovoshnoy pomidor</h3>
+                    <strong id="price13">Narxi: 12.000</strong>
+                </div>
+            </div>
+
+            <!-- Ovoshnoy assarti -->
+            <div class="food-item">
+                <div class="food-image"><img src="./shashliklar_image/Ovoshnoy.jpg" alt=""></div>
+                <div class="food-content">
+                    <h3 id="foods-name14">Ovoshnoy assarti</h3>
+                    <strong id="price14">Narxi: 15.000</strong>
+                </div>
+            </div>
         </div>
+
+        <a href="contact.html" class="contact-link" id="contact-link">Murojaat uchun</a>
     </div>
 
     <script>
+        // Note: Removed localStorage usage as it's not supported in this environment
+        // Using default language (Uzbek) instead
         window.onload = function () {
-            const savedLanguage = localStorage.getItem('selectedLanguage') || 'uz';
-            updateContent(savedLanguage);
+            updateContent('uz');
         };
 
         function updateContent(lang) {
@@ -184,7 +345,7 @@
             const foodsName12 = document.getElementById('foods-name12');
             const foodsName13 = document.getElementById('foods-name13');
             const foodsName14 = document.getElementById('foods-name14');
-            const price = document.getElementById('price');
+            const prices = document.getElementById('prices');
             const price1 = document.getElementById('price1');
             const price2 = document.getElementById('price2');
             const price3 = document.getElementById('price3');
@@ -208,30 +369,30 @@
                 foodsName2.textContent = "Qo'y jaz";
                 foodsName3.textContent = "Jaz fele";
                 foodsName4.textContent = "Tovuq kavkaz";
-                foodsName5.textContent = "Tovuq fele";
+                foodsName5.textContent = "Kavkaz qiyma";
                 foodsName6.textContent = "Jigar";
                 foodsName7.textContent = "Rulet qiyma";
                 foodsName8.textContent = "Napalion";
-                foodsName9.textContent = "Qo'vurg'a";
+                foodsName9.textContent = "Qovurg'a";
                 foodsName10.textContent = "Rulet govyadina";
                 foodsName11.textContent = "Dumba shashlik";
                 foodsName12.textContent = "Gribi";
                 foodsName13.textContent = "Ovoshnoy pomidor";
                 foodsName14.textContent = "Ovoshnoy assarti";
-                price.textContent = "Narxi: 20.000";
-                price1.textContent = 'Narxi: 23.000';
-                price2.textContent = 'Narxi: 23.000';
-                price3.textContent = 'Narxi: 25.000';
+                prices.textContent = "Narxi: 22.000";
+                price1.textContent = 'Narxi: 25.000';
+                price2.textContent = 'Narxi: 25.000';
+                price3.textContent = 'Narxi: 28.000';
                 price4.textContent = 'Narxi: 23.000';
-                price5.textContent = 'Narxi: 17.000';
-                price6.textContent = 'Narxi: 17.000';
-                price7.textContent = 'Narxi: 21.000';
-                price8.textContent = 'Narxi: 25.000';
-                price9.textContent = 'Narxi: 25.000';
-                price10.textContent = 'Narxi: 25.000';
+                price5.textContent = 'Narxi: 45.000';
+                price6.textContent = 'Narxi: 18.000';
+                price7.textContent = 'Narxi: 22.000';
+                price8.textContent = 'Narxi: 28.000';
+                price9.textContent = 'Narxi: 28.000';
+                price10.textContent = 'Narxi: 28.000';
                 price11.textContent = 'Narxi: 17.000';
-                price12.textContent = 'Narxi: 17.000';
-                price13.textContent = 'Narxi: 10.000';
+                price12.textContent = 'Narxi: 18.000';
+                price13.textContent = 'Narxi: 12.000';
                 price14.textContent = 'Narxi: 15.000';
                 contactLink.textContent = "Murojaat uchun";
             } else if (lang === 'ru') {
@@ -241,7 +402,7 @@
                 foodsName2.textContent = 'Кусковой баранина';
                 foodsName3.textContent = "Кусковой филе";
                 foodsName4.textContent = "Куриные крылышки";
-                foodsName5.textContent = "Куриный филе";
+                foodsName5.textContent = "Молотый";
                 foodsName6.textContent = "Печень";
                 foodsName7.textContent = "Рулет молотый";
                 foodsName8.textContent = "Наполеон";
@@ -251,20 +412,20 @@
                 foodsName12.textContent = "Грибы";
                 foodsName13.textContent = "Овощной помидор";
                 foodsName14.textContent = "Овощной ассорти";
-                price.textContent = "Цена: 20.000";
-                price1.textContent = 'Цена: 23.000';
-                price2.textContent = 'Цена: 23.000';
-                price3.textContent = 'Цена: 25.000';
+                prices.textContent = "Цена: 22.000";
+                price1.textContent = 'Цена: 25.000';
+                price2.textContent = 'Цена: 25.000';
+                price3.textContent = 'Цена: 28.000';
                 price4.textContent = 'Цена: 23.000';
-                price5.textContent = 'Цена: 17.000';
-                price6.textContent = 'Цена: 17.000';
-                price7.textContent = 'Цена: 21.000';
-                price8.textContent = 'Цена: 25.000';
-                price9.textContent = 'Цена: 25.000';
-                price10.textContent = 'Цена: 25.000';
+                price5.textContent = 'Цена: 45.000';
+                price6.textContent = 'Цена: 18.000';
+                price7.textContent = 'Цена: 22.000';
+                price8.textContent = 'Цена: 28.000';
+                price9.textContent = 'Цена: 28.000';
+                price10.textContent = 'Цена: 28.000';
                 price11.textContent = 'Цена: 17.000';
-                price12.textContent = 'Цена: 17.000';
-                price13.textContent = 'Цена: 10.000';
+                price12.textContent = 'Цена: 18.000';
+                price13.textContent = 'Цена: 12.000';
                 price14.textContent = 'Цена: 15.000';
                 contactLink.textContent = "Для связи";
             }

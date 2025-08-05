@@ -7,295 +7,357 @@
     <title>Foods</title>
     <style>
         body {
-    font-family: 'Arial', sans-serif;
-    margin: 0;
-    padding: 0;
-    background: linear-gradient(45deg, #24231d, #1e1c1d);
-    display: flex;
-    justify-content: center;
-}
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(45deg, #24231d, #1e1c1d);
+            display: flex;
+            justify-content: center;
+        }
 
-.container {
-    max-width: 1200px;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 20px;
-    padding: 20px;
-}
+        .container {
+            max-width: 1200px;
+            width: 100%;
+            padding: 20px;
+        }
 
-h1 {
-    text-align: center;
-    color: #ff8747;
-    font-size: 32px;
-}
+        h1 {
+            text-align: center;
+            color: #ff8747;
+            font-size: 32px;
+            margin-bottom: 30px;
+        }
 
-.menu {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 20px;
-}
+        .menu {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+            justify-items: center;
+        }
 
-.food-item {
-    width: 280px;
-    border-radius: 15px;
-    overflow: hidden;
-    height: 320px;
-    background: #333;
-    box-shadow: 0 4px 8px rgba(255, 255, 255, 0.1);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
+        /* Desktop: 4 columns */
+        @media (min-width: 1200px) {
+            .menu {
+                grid-template-columns: repeat(4, 1fr);
+            }
+        }
 
-.food-item:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 8px 16px rgba(255, 255, 255, 0.2);
-}
+        /* Large tablets and small desktops: 3 columns */
+        @media (min-width: 993px) and (max-width: 1199px) {
+            .menu {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
 
-.food-image {
-    width: 100%;
-    height: 220px;
-    object-fit: cover;
-}
+        /* Tablets: 2 columns */
+        @media (min-width: 601px) and (max-width: 992px) {
+            .menu {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 15px;
+            }
+            
+            .food-item {
+                width: 100% !important;
+                max-width: 300px;
+            }
+        }
 
-h3 {
-    text-align: center;
-    font-size: 20px;
-    font-weight: 900;
-    margin-top: 10px;
-    color: #ffcc00;
-}
+        /* Mobile phones: 1 column */
+        @media (max-width: 600px) {
+            .menu {
+                grid-template-columns: 1fr;
+                gap: 15px;
+            }
+            
+            .food-item {
+                width: 100% !important;
+                max-width: 350px;
+            }
+            
+            h1 {
+                font-size: 28px;
+            }
+        }
 
-strong {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 18px;
-    color: #fff;
-    margin-top: 5px;
-}
+        .food-item {
+            width: 280px;
+            border-radius: 20px;
+            overflow: hidden;
+            height: auto;
+            min-height: 300px;
+            background: #333;
+            box-shadow: 0 4px 8px rgba(255, 255, 255, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            display: flex;
+            flex-direction: column;
+        }
 
+        .food-item:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 8px 16px rgba(255, 255, 255, 0.2);
+        }
+
+        .food-image {
+            width: 100%;
+            height: 220px;
+            object-fit: cover;
+        }
+
+        .food-content {
+            padding: 10px;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        h3 {
+            text-align: center;
+            font-size: 20px;
+            font-weight: 900;
+            margin: 0;
+            color: #ffcc00;
+        }
+
+        .food-name-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            margin: 10px 0;
+        }
+
+        .star-icon {
+            width: 20px;
+            height: 20px;
+            fill: red;
+        }
+
+        strong {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 16px;
+            color: #fff;
+            margin: 5px 0;
+        }
+
+        h4 {
+            margin: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 14px;
+            color: #ccc;
+        }
+
+        .contact-link {
+            text-decoration: none;
+            font-size: 20px;
+            color: #fff;
+            margin: 30px 0;
+            text-align: center;
+            display: block;
+        }
+
+        .contact-link:hover {
+            color: #ff8747;
+        }
     </style>
 </head>
 
 <body>
     <div class="container">
-        <div style="display: flex; color: #fff; align-items: center; justify-content: center; flex-direction: column;"
-            class="container">
+        <div style="display: flex; color: #fff; align-items: center; justify-content: center; flex-direction: column;">
             <h1 id="title">2-Ovqatlar</h1>
             <div class="menu">
-                <div style="width: 280px; overflow: hidden; border-radius: 20px; height: 300px;" class="food-item">
-                    <img width="280px" height="220px" src="./image2_ovqat/Bifshteks.jpg" alt="Vaguri" class="food-image">
-                    <h3 style="text-align: center; font-size: 22px; font-weight: 900; margin: 0; margin-top: 10px;"
-                        id="food-name">Bifshteks</h3>
-                    <strong
-                        style="margin: 0; display: flex; align-items: center; justify-content: center; margin-top: 5px;"
-                        id="price">Narxi: 35.000</strong>
-                </div>
-            </div>
-            <div class="menu">
-                <div style="width: 280px; overflow: hidden; border-radius: 20px; height: 300px;" class="food-item">
-                    <img width="280px" height="220px" src="./image2_ovqat/Bistrogo.jpg" alt="Vaguri" class="food-image">
-                    <h3 style="text-align: center; font-size: 22px; font-weight: 900; margin: 0; margin-top: 10px;"
-                        id="food-name1">Bistrogin</h3>
-                    <strong
-                        style="margin: 0; display: flex; align-items: center; justify-content: center; margin-top: 5px;"
-                        id="price1">Narxi: 35.000</strong>
-                </div>
-            </div>
-            <div class="menu">
-                <div style="width: 280px; overflow: hidden; border-radius: 20px; height: 300px;" class="food-item">
-                    <img width="280px" height="220px" src="./image2_ovqat/Norin.jpg" alt="Vaguri" class="food-image">
-                    <h3 style="text-align: center; font-size: 22px; font-weight: 900; margin: 0; margin-top: 10px;"
-                        id="food-name2">Norin</h3>
-                    <strong
-                        style="margin: 0; display: flex; align-items: center; justify-content: center; margin-top: 5px;"
-                        id="price2">Narxi: 30.000</strong>
-                </div>
-            </div>
-            <div class="menu">
-                <div style="width: 280px; overflow: hidden; border-radius: 20px; height: 300px;" class="food-item">
-                    <img width="280px" height="220px" src="./image2_ovqat/Manti.jpg" alt="Vaguri" class="food-image">
-                    <h3 style="text-align: center; font-size: 22px; font-weight: 900; margin: 0; margin-top: 10px;"
-                        id="food-name3">Manti</h3>
-                    <strong
-                        style="margin: 0; display: flex; align-items: center; justify-content: center; margin-top: 5px;"
-                        id="price3">Narxi: 8.000</strong>
-                </div>
-            </div>
-            <div class="menu">
-                <div style="width: 280px; overflow: hidden; border-radius: 20px; height: 300px;" class="food-item">
-                    <img width="280px" height="220px" src="./image2_ovqat/Qovurma_lagmon.jpg" alt="Vaguri" class="food-image">
-                    <h3 style="text-align: center; font-size: 22px; font-weight: 900; margin: 0; margin-top: 10px;"
-                        id="food-name4">Qovurma lag'mon</h3>
-                    <strong
-                        style="margin: 0; display: flex; align-items: center; justify-content: center; margin-top: 5px;"
-                        id="price4">Narxi: 35.000</strong>
-                </div>
-            </div>
-            <div class="menu">
-                <div style="width: 280px; overflow: hidden; border-radius: 20px; height: 300px;" class="food-item">
-                    <img width="280px" height="220px" src="./image2_ovqat/Tushonka.jpg" alt="Vaguri" class="food-image">
-                    <h3 style="text-align: center; font-size: 22px; font-weight: 900; margin: 0; margin-top: 10px;"
-                        id="food-name5">Tushonka</h3>
-                    <strong
-                        style="margin: 0; display: flex; align-items: center; justify-content: center; margin-top: 5px;"
-                        id="price5">Narxi: 55.000</strong>
-                </div>
-            </div>
-            <div class="menu">
-                <div style="width: 280px; overflow: hidden; border-radius: 20px; height: 300px;" class="food-item">
-                    <img width="280px" height="220px" src="./image2_ovqat/Tabaka.jpg" alt="Vaguri" class="food-image">
-                    <h3 style="text-align: center; font-size: 22px; font-weight: 900; margin: 0; margin-top: 10px;"
-                        id="food-name6">Tabaka</h3>
-                    <strong
-                        style="margin: 0; display: flex; align-items: center; justify-content: center; margin-top: 5px;"
-                        id="price6">Narxi: 30.000</strong>
-                </div>
-            </div>
-            <div class="menu">
-                <div style="width: 280px; overflow: hidden; border-radius: 20px; height: 340px;" class="food-item">
-                    <img width="280px" height="220px" src="./image2_ovqat/Jiz.jpg" alt="Vaguri" class="food-image">
-                    <div style="display: flex; align-items: center; justify-content: center; gap: 10px; margin-top: 10px;">
-                        <h3 style="text-align: center; font-size: 22px; font-weight: 900; margin: 0;"
-                        id="food-name8">Jiz</h3>
-                        <img id="logo"
-                            style="width: 20px; height: 20px;"
-                            src="./image/star.svg"
-                            alt="G'ijduvon Fayz Logo">
+                <!-- Bifshteks -->
+                <div class="food-item">
+                    <img src="./image2_ovqat/Bifshteks.jpg" alt="Bifshteks" class="food-image">
+                    <div class="food-content">
+                        <h3 id="food-name">Bifshteks</h3>
+                        <strong id="price">Narxi: 38.000</strong>
                     </div>
-                    <strong
-                        style="margin: 0; display: flex; align-items: center; justify-content: center; margin-top: 5px;"
-                        id="price8">Narxi: 220.000
-                    </strong>
-                    <h4 style="margin: 0; display: flex; align-items: center; justify-content: center; margin-top: 11px;" id="porsiya">Portsiya 66.000</h4>
                 </div>
-            </div>
-            <div class="menu">
-                <div style="width: 280px; overflow: hidden; border-radius: 20px; height: 300px;" class="food-item">
-                    <img width="280px" height="220px" src="./image2_ovqat/Mangal.jpg" alt="Vaguri" class="food-image">
-                    <h3 style="text-align: center; font-size: 22px; font-weight: 900; margin: 0; margin-top: 10px;"
-                        id="food-name9">Mangal</h3>
-                    <strong
-                        style="margin: 0; display: flex; align-items: center; justify-content: center; margin-top: 5px;"
-                        id="price9">Narxi: 140.000</strong>
-                </div>
-            </div>
-            <div class="menu">
-                <div style="width: 280px; overflow: hidden; border-radius: 20px; height: 340px;" class="food-item">
-                    <img width="280px" height="220px" src="./image2_ovqat/Qozon_kabob.jpg" alt="Vaguri" class="food-image">
-                    <div style="display: flex; align-items: center; justify-content: center; gap: 10px; margin-top: 10px;">
-                        <h3 style="text-align: center; font-size: 22px; font-weight: 900; margin: 0;"
-                        id="food-name10">Qozon kabob</h3>
-                        <img id="logo"
-                            style="width: 20px; height: 20px;"
-                            src="./image/star.svg"
-                            alt="G'ijduvon Fayz Logo">
+
+                <!-- Bistrogin -->
+                <div class="food-item">
+                    <img src="./image2_ovqat/Bistrogo.jpg" alt="Bistrogin" class="food-image">
+                    <div class="food-content">
+                        <h3 id="food-name1">Bistrogin</h3>
+                        <strong id="price1">Narxi: 38.000</strong>
                     </div>
-                    <strong
-                        style="margin: 0; display: flex; align-items: center; justify-content: center; margin-top: 5px;"
-                        id="price10">Narxi: 220.000
-                    </strong>
-                    <h4 style="margin: 0; display: flex; align-items: center; justify-content: center; margin-top: 11px;" id="porsiya">Portsiya 66.000</h4>
                 </div>
-            </div>
-            <div class="menu">
-                <div style="width: 280px; overflow: hidden; border-radius: 20px; height: 300px;" class="food-item">
-                    <img width="280px" height="220px" src="./image2_ovqat/Toy_oshi.jpg" alt="Vaguri" class="food-image">
-                    <h3 style="text-align: center; font-size: 22px; font-weight: 900; margin: 0; "
-                        id="food-name11">To'y oshi</h3>
-                    <strong
-                        style="margin: 0; display: flex; align-items: center; justify-content: center; margin-top: 5px;"
-                        id="price11">Narxi: 28.000</strong>
-                </div>
-            </div>
-            <div class="menu">
-                <div style="width: 280px; overflow: hidden; border-radius: 20px; height: 300px;" class="food-item">
-                    <img width="280px" height="220px" src="./image2_ovqat/Choyxona_osh.jpg" alt="Vaguri" class="food-image">
-                    <div style="display: flex; align-items: center; justify-content: center; gap: 10px; margin-top: 10px;">
-                        <h3 style="text-align: center; font-size: 22px; font-weight: 900; margin: 0; "
-                        id="food-name12">Choyxona palov kg</h3>
-                        <img id="logo"
-                            style="width: 20px; height: 20px;"
-                            src="./image/star.svg"
-                            alt="G'ijduvon Fayz Logo">
+
+                <!-- Norin -->
+                <div class="food-item">
+                    <img src="./image2_ovqat/Norin.jpg" alt="Norin" class="food-image">
+                    <div class="food-content">
+                        <h3 id="food-name2">Norin</h3>
+                        <strong id="price2">Narxi: 33.000</strong>
                     </div>
-                    <strong
-                        style="margin: 0; display: flex; align-items: center; justify-content: center; margin-top: 5px;"
-                        id="price12">Narxi: 250.000</strong>
                 </div>
-            </div>
-            <div class="menu">
-                <div style="width: 280px; overflow: hidden; border-radius: 20px; height: 300px;" class="food-item">
-                    <img width="280px" height="220px" src="./image2_ovqat/Olot_somsa.jpg" alt="Vaguri" class="food-image">
-                    <div style="display: flex; align-items: center; justify-content: center; gap: 10px; margin-top: 10px;">
-                        <h3 style="text-align: center; font-size: 22px; font-weight: 900; margin: 0; "
-                        id="food-name13">Olot somsa</h3>
-                        <img id="logo"
-                        style="width: 20px; height: 20px;"
-                        src="./image/star.svg"
-                        alt="G'ijduvon Fayz Logo">
+
+                <!-- Manti -->
+                <div class="food-item">
+                    <img src="./image2_ovqat/Manti.jpg" alt="Manti" class="food-image">
+                    <div class="food-content">
+                        <h3 id="food-name3">Manti</h3>
+                        <strong id="price3">Narxi: 9.000</strong>
                     </div>
-                    <strong
-                        style="margin: 0; display: flex; align-items: center; justify-content: center; margin-top: 5px;"
-                        id="price13">Narxi: 11.000</strong>
                 </div>
-            </div>
-            <div class="menu">
-                <div style="width: 280px; overflow: hidden; border-radius: 20px; height: 300px;" class="food-item">
-                    <img width="280px" height="220px" src="./image2_ovqat/Tandir.jpg" alt="Vaguri" class="food-image">
-                    <div style="display: flex; align-items: center; justify-content: center; gap: 10px; margin-top: 10px;">
-                        <h3 style="text-align: center; font-size:22px; font-weight: 900; margin: 0;"
-                        id="food-name14">Tandir</h3>
-                        <img id="logo"
-                            style="width: 20px; height: 20px;"
-                            src="./image/star.svg"
-                            alt="G'ijduvon Fayz Logo">
+
+                <!-- Qovurma lag'mon -->
+                <div class="food-item">
+                    <img src="./image2_ovqat/Qovurma_lagmon.jpg" alt="Qovurma lag'mon" class="food-image">
+                    <div class="food-content">
+                        <h3 id="food-name4">Qovurma lag'mon</h3>
+                        <strong id="price4">Narxi: 38.000</strong>
                     </div>
-                    <strong
-                        style="margin: 0; display: flex; align-items: center; justify-content: center; margin-top: 5px;"
-                        id="price14">Narxi: 240.000</strong>
                 </div>
-            </div>
-            <div class="menu">
-                <div style="width: 280px; overflow: hidden; border-radius: 20px; height: 300px;" class="food-item">
-                    <img width="280px" height="220px" src="./image2_ovqat/Sazan_baliq.jpg" alt="Vaguri" class="food-image">
-                    <h3 style="text-align: center; font-size: 22px; font-weight: 900; margin: 0; margin-top: 10px;"
-                        id="food-name15"> Sazan Baliq</h3>
-                    <strong
-                        style="margin: 0; display: flex; align-items: center; justify-content: center; margin-top: 5px;"
-                        id="price15">Narxi: 170.000</strong>
-                </div>
-            </div>
-            <div class="menu">
-                <div style="width: 280px; overflow: hidden; border-radius: 20px; height: 350px;" class="food-item">
-                    <img width="280px" height="200px" src="./image2_ovqat/Vaguri.jpg" alt="Vaguri" class="food-image">
-                    <div style="display: flex; align-items: center; justify-content: center; gap: 10px; margin-top: 10px;">
-                        <h3 style="text-align: center; font-size: 22px; font-weight: 900; margin: 0;"
-                            id="food-name16">Vaguri</h3>
-                        <img id="logo"
-                            style="width: 20px; height: 20px;"
-                            src="./image/star.svg"
-                            alt="G'ijduvon Fayz Logo">
+
+                <!-- Tushonka -->
+                <div class="food-item">
+                    <img src="./image2_ovqat/Tushonka.jpg" alt="Tushonka" class="food-image">
+                    <div class="food-content">
+                        <h3 id="food-name5">Tushonka</h3>
+                        <strong id="price5">Narxi: 60.000</strong>
                     </div>
-                    <div style="display: flex; flex-direction: column; align-items: center; justify-content: center; font-size: 15px; margin: 0;">
-                        <strong
-                            style="display: flex; align-items: center; justify-content: center;margin-top: 15px; "
-                            id="price16">Narxi: 245.000 kg
-                        </strong>
-                        <h4 style="margin: 0; margin-top: 11px;" id="fri-haqida">Fri (portsiya) 15.000</h4>
+                </div>
+
+                <!-- Tabaka -->
+                <div class="food-item">
+                    <img src="./image2_ovqat/Tabaka.jpg" alt="Tabaka" class="food-image">
+                    <div class="food-content">
+                        <h3 id="food-name6">Tabaka</h3>
+                        <strong id="price6">Narxi: 33.000</strong>
+                    </div>
+                </div>
+
+                <!-- Jiz -->
+                <div class="food-item">
+                    <img src="./image2_ovqat/Jiz.jpg" alt="Jiz" class="food-image">
+                    <div class="food-content">
+                        <div class="food-name-container">
+                            <h3 id="food-name8">Jiz</h3>
+                            <svg xmlns="http://www.w3.org/2000/svg" class="star-icon" viewBox="0 0 16 16">
+                                <path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"/>
+                            </svg>
+                        </div>
+                        <strong id="price8">Narxi: 240.000</strong>
+                        <h4 id="porsiya8">Portsiya 66.000</h4>
+                    </div>
+                </div>
+
+                <!-- Mangal -->
+                <div class="food-item">
+                    <img src="./image2_ovqat/Mangal.jpg" alt="Mangal" class="food-image">
+                    <div class="food-content">
+                        <h3 id="food-name9">Mangal</h3>
+                        <strong id="price9">Narxi: 150.000</strong>
+                    </div>
+                </div>
+
+                <!-- Qozon kabob -->
+                <div class="food-item">
+                    <img src="./image2_ovqat/Qozon_kabob.jpg" alt="Qozon kabob" class="food-image">
+                    <div class="food-content">
+                        <div class="food-name-container">
+                            <h3 id="food-name10">Qozon kabob</h3>
+                            <svg xmlns="http://www.w3.org/2000/svg" class="star-icon" viewBox="0 0 16 16">
+                                <path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"/>
+                            </svg>
+                        </div>
+                        <strong id="price10">Narxi: 240.000</strong>
+                        <h4 id="porsiya10">Portsiya 66.000</h4>
+                    </div>
+                </div>
+
+                <!-- To'y oshi -->
+                <div class="food-item">
+                    <img src="./image2_ovqat/Toy_oshi.jpg" alt="To'y oshi" class="food-image">
+                    <div class="food-content">
+                        <h3 id="food-name11">To'y oshi</h3>
+                        <strong id="price11">Narxi: 60.000</strong>
+                    </div>
+                </div>
+
+                <!-- Choyxona palov -->
+                <div class="food-item">
+                    <img src="./image2_ovqat/Choyxona_osh.jpg" alt="Choyxona palov" class="food-image">
+                    <div class="food-content">
+                        <div class="food-name-container">
+                            <h3 id="food-name12">Choyxona palov kg</h3>
+                            <svg xmlns="http://www.w3.org/2000/svg" class="star-icon" viewBox="0 0 16 16">
+                                <path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"/>
+                            </svg>
+                        </div>
+                        <strong id="price12">Narxi: 270.000</strong>
+                    </div>
+                </div>
+
+                <!-- Olot somsa -->
+                <div class="food-item">
+                    <img src="./image2_ovqat/Olot_somsa.jpg" alt="Olot somsa" class="food-image">
+                    <div class="food-content">
+                        <div class="food-name-container">
+                            <h3 id="food-name13">Olot somsa</h3>
+                            <svg xmlns="http://www.w3.org/2000/svg" class="star-icon" viewBox="0 0 16 16">
+                                <path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"/>
+                            </svg>
+                        </div>
+                        <strong id="price13">Narxi: 12.000</strong>
+                    </div>
+                </div>
+
+                <!-- Tandir -->
+                <div class="food-item">
+                    <img src="./image2_ovqat/Tandir.jpg" alt="Tandir" class="food-image">
+                    <div class="food-content">
+                        <div class="food-name-container">
+                            <h3 id="food-name14">Tandir</h3>
+                            <svg xmlns="http://www.w3.org/2000/svg" class="star-icon" viewBox="0 0 16 16">
+                                <path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"/>
+                            </svg>
+                        </div>
+                        <strong id="price14">Narxi: 250.000</strong>
+                    </div>
+                </div>
+
+                <!-- Sazan Baliq -->
+                <div class="food-item">
+                    <img src="./image2_ovqat/Sazan_baliq.jpg" alt="Sazan Baliq" class="food-image">
+                    <div class="food-content">
+                        <h3 id="food-name15">Sazan Baliq</h3>
+                        <strong id="price15">Narxi: 170.000</strong>
+                    </div>
+                </div>
+
+                <!-- Vaguri -->
+                <div class="food-item">
+                    <img src="./image2_ovqat/Vaguri.jpg" alt="Vaguri" class="food-image">
+                    <div class="food-content">
+                        <div class="food-name-container">
+                            <h3 id="food-name16">Vaguri</h3>
+                            <svg xmlns="http://www.w3.org/2000/svg" class="star-icon" viewBox="0 0 16 16">
+                                <path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"/>
+                            </svg>
+                        </div>
+                        <strong id="price16">Narxi: 255.000 kg</strong>
+                        <h4 id="fri-haqida">Fri (portsiya) 15.000</h4>
                     </div>
                 </div>
             </div>
-            <a style="text-decoration: none; font-size: 20px; color: #fff; margin-bottom: 30px; "
-                href="contact.html" class="link" id="contact-link">Murojaat uchun</a>
+
+            <a href="contact.html" class="contact-link" id="contact-link">Murojaat uchun</a>
         </div>
     </div>
 
     <script>
+        // Note: Removed localStorage usage as it's not supported in this environment
+        // Using default language (Uzbek) instead
         window.onload = function () {
-            const savedLanguage = localStorage.getItem('selectedLanguage') || 'uz';
-            updateContent(savedLanguage);
+            updateContent('uz');
         };
 
         function updateContent(lang) {
@@ -308,7 +370,6 @@ strong {
             const foodName4 = document.getElementById('food-name4');
             const foodName5 = document.getElementById('food-name5');
             const foodName6 = document.getElementById('food-name6');
-            const foodName7 = document.getElementById('food-name7');
             const foodName8 = document.getElementById('food-name8');
             const foodName9 = document.getElementById('food-name9');
             const foodName10 = document.getElementById('food-name10');
@@ -318,7 +379,6 @@ strong {
             const foodName14 = document.getElementById('food-name14');
             const foodName15 = document.getElementById('food-name15');
             const foodName16 = document.getElementById('food-name16');
-            const porsiya = document.getElementById('porsiya');
             const price = document.getElementById('price');
             const price1 = document.getElementById('price1');
             const price2 = document.getElementById('price2');
@@ -326,7 +386,6 @@ strong {
             const price4 = document.getElementById('price4');
             const price5 = document.getElementById('price5');
             const price6 = document.getElementById('price6');
-            const price7 = document.getElementById('price7');
             const price8 = document.getElementById('price8');
             const price9 = document.getElementById('price9');
             const price10 = document.getElementById('price10');
@@ -340,7 +399,7 @@ strong {
 
             if (lang === 'uz') {
                 title.textContent = "2-Ovqatlar";
-                frihaqida.textContent = "Fri (portsiya) 15.000"
+                if (frihaqida) frihaqida.textContent = "Fri (portsiya) 15.000"
                 foodName.textContent = "Bifshteks";
                 foodName1.textContent = "Bistrogin";
                 foodName2.textContent = "Norin";
@@ -348,7 +407,6 @@ strong {
                 foodName4.textContent = "Qo'vurma lag'mon";
                 foodName5.textContent = "Tushonka";
                 foodName6.textContent = "Tabaka";
-                foodName7.textContent = "Qovurma lag'mon";
                 foodName8.textContent = "Jiz";
                 foodName9.textContent = "Mangal";
                 foodName10.textContent = "Qozon kabob";
@@ -358,28 +416,26 @@ strong {
                 foodName14.textContent = "Tandir";
                 foodName15.textContent = "Sazan baliq";
                 foodName16.textContent = "Vaguri";
-                porsiya.textContent = "Portsiya";
-                price.textContent = "Narxi: 35.000";
-                price1.textContent = "Narxi: 35.000";
-                price2.textContent = "Narxi: 30.000";
-                price3.textContent = "Narxi: 8.000";
-                price4.textContent = "Narxi: 35.000";
-                price5.textContent = "Narxi: 55.000";
-                price6.textContent = "Narxi: 30.000";
-                price7.textContent = "Narxi: 90.000";
-                price8.textContent = "Narxi: 220.000 kg";
-                price9.textContent = "Narxi: 140.000";
-                price10.textContent = "Narxi: 220.000 kg";
-                price11.textContent = "Narxi: 28.000";
-                price12.textContent = "Narxi: 250.000 kg";
-                price13.textContent = "Narxi: 11.000";
-                price14.textContent = "Narxi: 240.000 kg";
+                price.textContent = "Narxi: 38.000";
+                price1.textContent = "Narxi: 38.000";
+                price2.textContent = "Narxi: 33.000";
+                price3.textContent = "Narxi: 9.000";
+                price4.textContent = "Narxi: 38.000";
+                price5.textContent = "Narxi: 60.000";
+                price6.textContent = "Narxi: 33.000";
+                price8.textContent = "Narxi: 240.000 kg";
+                price9.textContent = "Narxi: 150.000";
+                price10.textContent = "Narxi: 240.000 kg";
+                price11.textContent = "Narxi: 60.000";
+                price12.textContent = "Narxi: 270.000 kg";
+                price13.textContent = "Narxi: 12.000";
+                price14.textContent = "Narxi: 250.000 kg";
                 price15.textContent = "Narxi: 170.000";
-                price16.textContent = "Narxi: 245.000 kg";
+                price16.textContent = "Narxi: 255.000 kg";
                 contactLink.textContent = "Murojaat uchun";
             } else if (lang === 'ru') {
                 title.textContent = "2-Блюда";
-                frihaqida.textContent = "Фри (порсия) 15.000"
+                if (frihaqida) frihaqida.textContent = "Фри (порсия) 15.000"
                 foodName.textContent = "Бифштекс";
                 foodName1.textContent = "Бистроги";
                 foodName2.textContent = "Норин";
@@ -387,7 +443,6 @@ strong {
                 foodName4.textContent = "Жаренный лагман";
                 foodName5.textContent = "Тушенка";
                 foodName6.textContent = "Табака";
-                foodName7.textContent = "Жаренные лагман";
                 foodName8.textContent = "Джиз-быз";
                 foodName9.textContent = "Рыба в мангале";
                 foodName10.textContent = "Казан кабаб";
@@ -397,24 +452,22 @@ strong {
                 foodName14.textContent = "Тандир";
                 foodName15.textContent = "Жаренные pыба";
                 foodName16.textContent = "Вагури";
-                porsiya.textContent = "Портсия";
-                price.textContent = "Цена: 35.000";
-                price1.textContent = "Цена: 35.000";
-                price2.textContent = "Цена: 30.000";
-                price3.textContent = "Цена: 8.000";
-                price4.textContent = "Цена: 35.000";
-                price5.textContent = "Цена: 55.000";
-                price6.textContent = "Цена: 30.000";
-                price7.textContent = "Цена: 90.000";
-                price8.textContent = "Цена: 210.000 кг";
-                price9.textContent = "Цена: 140.000";
-                price10.textContent = "Цена: 220.000 кг";
-                price11.textContent = "Цена: 28.000";
-                price12.textContent = "Цена: 250.000 кг";
-                price13.textContent = "Цена: 11.000";
-                price14.textContent = "Цена: 240.000 кг";
+                price.textContent = "Цена: 38.000";
+                price1.textContent = "Цена: 38.000";
+                price2.textContent = "Цена: 33.000";
+                price3.textContent = "Цена: 9.000";
+                price4.textContent = "Цена: 38.000";
+                price5.textContent = "Цена: 60.000";
+                price6.textContent = "Цена: 33.000";
+                price8.textContent = "Цена: 240.000 кг";
+                price9.textContent = "Цена: 150.000";
+                price10.textContent = "Цена: 240.000 кг";
+                price11.textContent = "Цена: 60.000";
+                price12.textContent = "Цена: 270.000 кг";
+                price13.textContent = "Цена: 12.000";
+                price14.textContent = "Цена: 250.000 кг";
                 price15.textContent = "Цена: 170.000";
-                price16.textContent = "Цена: 245.000 кг";
+                price16.textContent = "Цена: 255.000 кг";
                 contactLink.textContent = "Для связи";
             }
         }

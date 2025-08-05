@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="uz">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ichimliklar</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <style>
+    body {
+      background: linear-gradient(45deg, #24231d, #1e1c1d);
+      font-family: Arial, sans-serif;
+      text-align: center;
+      color: #fff;
+      margin: 0;
+      padding: 0;
+    }
+
+    .container {
+      max-width: 1100px;
+      margin: auto;
+      padding: 20px;
+    }
+
+    h1 {
+      font-size: 28px;
+      margin-bottom: 20px;
+    }
+
+    .menu {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 25px;
+      justify-items: center;
+    }
+
+    .food-item {
+      background: rgba(255, 255, 255, 0.08);
+      border-radius: 12px;
+      padding: 15px;
+      width: 100%;
+      max-width: 320px;
+      transition: transform 0.3s ease;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    }
+
+    .food-item:hover {
+      transform: translateY(-5px);
+    }
+
+    .food-image {
+      width: 100%;
+      height: 190px;
+      object-fit: cover;
+      border-radius: 10px;
+    }
+
+    h3 {
+      font-size: 22px;
+      font-weight: bold;
+      margin: 12px 0 5px;
+    }
+
+    p {
+      margin: 5px;
+      font-size: 16px;
+    }
+
+    strong {
+      display: block;
+      margin-top: 8px;
+      font-size: 18px;
+      color: #f1f1f1;
+    }
+
+    .contact-link {
+      display: block;
+      margin-top: 30px;
+      font-size: 22px;
+      color: rgb(252, 252, 252);
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .contact-link:hover {
+      color: #ffa500;
+    }
+
+    /* Tablet responsive design */
+    @media (max-width: 768px) {
+      .food-image {
+        height: 160px;
+      }
+
+      h3 {
+        font-size: 20px;
+      }
+
+      p,
+      strong {
+        font-size: 15px;
+      }
+    }
+    .food-item {
+            width: 280px;
+            border-radius: 20px;
+            overflow: hidden;
+            height: auto;
+            min-height: 300px;
+            background: #333;
+            box-shadow: 0 4px 8px rgba(255, 255, 255, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .food-item:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 8px 16px rgba(255, 255, 255, 0.2);
+        }
+
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <h1 id="title">Ichimliklar</h1>
+    <div class="menu">
+      <div class="food-item">
+        <img src="./ichimliklar/maxito.jpg" alt="Moxito" class="food-image" />
+        <h3 id="food-name">Moxito</h3>
+        <strong id="narxi">Narxi: 30.000</strong>
+      </div>
+
+      <div class="food-item">
+        <img src="./ichimliklar/pivalar.jpg" alt="Pivo" class="food-image" />
+        <h3 id="food-name2">Pivo</h3>
+        <p id="piva1">Sarbast (15.000)</p>
+        <p id="piva2">Tuborg (15.000)</p>
+        <p id="piva3">Gus (15.000)</p>
+        <p id="piva4">Jateski (20.000)</p>
+        <p id="piva5">Pivo assarti (90.000)</p>
+      </div>
+    </div>
+
+    <a href="contact.html" class="contact-link" id="contact-link">Murojaat uchun</a>
+  </div>
+
+  <script>
+    window.onload = function () {
+      const savedLanguage = localStorage.getItem("selectedLanguage") || "uz";
+      updateContent(savedLanguage);
+    };
+
+    function updateContent(lang) {
+      const title = document.getElementById("title");
+      const foodName = document.getElementById("food-name");
+      const foodName2 = document.getElementById("food-name2");
+      const contactLink = document.getElementById("contact-link");
+      const narxi = document.getElementById("narxi");
+      const piva1 = document.getElementById("piva1");
+      const piva2 = document.getElementById("piva2");
+      const piva3 = document.getElementById("piva3");
+      const piva4 = document.getElementById("piva4");
+      const piva5 = document.getElementById("piva5");
+
+      if (lang === "uz") {
+        title.textContent = "Ichimliklar";
+        foodName.textContent = "Moxito";
+        foodName2.textContent = "Pivo";
+        contactLink.textContent = "Murojaat uchun";
+        narxi.textContent = "Narxi: 30.000";
+        piva1.textContent = "Sarbast (15.000)";
+        piva2.textContent = "Tuborg (15.000)";
+        piva3.textContent = "Gus (15.000)";
+        piva4.textContent = "Jateski (20.000)";
+        piva5.textContent = "Pivo assarti (90.000)";
+      } else if (lang === "ru") {
+        title.textContent = "Напитки";
+        foodName.textContent = "Мохито";
+        foodName2.textContent = "Пиво";
+        contactLink.textContent = "Для связи";
+        narxi.textContent = "Цена: 30.000";
+        piva1.textContent = "Сарбаст (15.000)";
+        piva2.textContent = "Туборг (15.000)";
+        piva3.textContent = "Гус (15.000)";
+        piva4.textContent = "Жатески (20.000)";
+        piva5.textContent = "Пиво ассорти (90.000)";
+      }
+    }
+  </script>
+</body>
+
+</html>
